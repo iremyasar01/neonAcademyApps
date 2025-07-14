@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class ImageDetailScreen extends StatelessWidget {
   final String imageUrl;
 
@@ -10,19 +11,28 @@ class ImageDetailScreen extends StatelessWidget {
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        iconTheme:const IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white),
         elevation: 0,
       ),
       body: SafeArea(
         child: Hero(
           tag: imageUrl,
-          child: InteractiveViewer( // Zoom yapılabilmesi için
+          child: InteractiveViewer(
             child: SizedBox(
               width: double.infinity,
               height: double.infinity,
               child: Image.network(
                 imageUrl,
-                fit: BoxFit.contain, // Ekrana orantılı şekilde sığdır
+                fit: BoxFit.contain,
+                loadingBuilder: (_, child, loadingProgress) {
+                  if (loadingProgress == null) return child;
+                  return const Center(
+                    child: CircularProgressIndicator(color: Colors.white),
+                  );
+                },
+                errorBuilder: (_, __, ___) => const Center(
+                  child: Icon(Icons.broken_image, color: Colors.white, size: 40),
+                ),
               ),
             ),
           ),
@@ -31,4 +41,5 @@ class ImageDetailScreen extends StatelessWidget {
     );
   }
 }
+
 
