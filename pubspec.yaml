@@ -68,6 +68,8 @@ flutter:
       - assets/sounds/large_door.mp3
       - 'assets/images/unlock.png'
       - 'assets/images/lock.png'
+      - 'assets/images/green_dragon.png'
+      - 'assets/images/red_dragon.png'
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
