@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:neonacademyapss/screens/container_screen.dart';
+import 'package:neonacademyapss/screens/wild_west_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -22,6 +23,16 @@ class HomeScreen extends StatelessWidget {
                 );
               },
               child: const Text('Awesome Gallery'),
+            ),
+            const SizedBox(height: 20),
+             ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const WildWestScreen()),
+                );
+              },
+              child: const Text('Wild Test'),
             ),
           ],
         ),
