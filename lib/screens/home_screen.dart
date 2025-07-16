@@ -3,6 +3,7 @@ import 'package:neonacademyapss/screens/container_screen.dart';
 import 'package:neonacademyapss/screens/dino_segmented_control_screen.dart';
 import 'package:neonacademyapss/screens/dress_up_screen.dart';
 import 'package:neonacademyapss/screens/page_control_screen.dart';
+import 'package:neonacademyapss/screens/pino_alert_screen.dart';
 import 'package:neonacademyapss/screens/resque_slider_screen.dart';
 import 'package:neonacademyapss/screens/switch_screen.dart';
 import 'package:neonacademyapss/screens/wicked_queen_screen.dart';
@@ -111,6 +112,17 @@ class HomeScreen extends StatelessWidget {
               },
               child: const Text('dino segmented control'),
               //segmented control
+            ),
+                const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const PinoAlertScreen()),
+                );
+              },
+              child: const Text('Pino Alert Controllers'),
+              //alert controllers
             ),
           ],
         ),
