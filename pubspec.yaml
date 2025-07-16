@@ -66,12 +66,17 @@ flutter:
       - assets/images/western_background.jpg
       - assets/sounds/open_bottle.mp3
       - assets/sounds/large_door.mp3
-      - 'assets/images/unlock.png'
-      - 'assets/images/lock.png'
-      - 'assets/images/green_dragon.png'
-      - 'assets/images/red_dragon.png'
-      - 'assets/images/pink_minus.png'
-      - 'assets/images/pink_button.png'
+      - assets/images/unlock.png
+      - assets/images/lock.png
+      - assets/images/green_dragon.png
+      - assets/images/red_dragon.png
+      - assets/images/pink_minus.png
+      - assets/images/pink_button.png
+      - assets/images/wedding.png
+      - assets/images/castle.png
+      - assets/images/crown.png
+      - assets/images/scroll.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
