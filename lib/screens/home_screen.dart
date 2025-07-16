@@ -7,6 +7,7 @@ import 'package:neonacademyapss/screens/dress_up_screen.dart';
 import 'package:neonacademyapss/screens/page_control_screen.dart';
 import 'package:neonacademyapss/screens/pino_alert_screen.dart';
 import 'package:neonacademyapss/screens/resque_slider_screen.dart';
+import 'package:neonacademyapss/screens/stack_views_screen.dart';
 import 'package:neonacademyapss/screens/switch_screen.dart';
 import 'package:neonacademyapss/screens/wicked_queen_screen.dart';
 import 'package:neonacademyapss/screens/wild_west_screen.dart';
@@ -152,6 +153,18 @@ class HomeScreen extends StatelessWidget {
                 );
               },
               child: const Text('Aladdin Progress Screen'),
+              //Linear Progress Indicators
+            ),
+              const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const StackViewScreen()),
+                );
+              },
+              child: const Text('Stack Views'),
               //Linear Progress Indicators
             ),
           ],
