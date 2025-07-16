@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:neonacademyapss/screens/aladdin_progress_screen.dart';
 import 'package:neonacademyapss/screens/busy_bees_screen.dart';
 import 'package:neonacademyapss/screens/container_screen.dart';
 import 'package:neonacademyapss/screens/dino_segmented_control_screen.dart';
@@ -86,55 +87,72 @@ class HomeScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const DressUpScreen()),
+                  MaterialPageRoute(
+                      builder: (context) => const DressUpScreen()),
                 );
               },
               child: const Text('Dress Up'),
               //Stepper
             ),
-             const SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const PageControlScreen()),
+                  MaterialPageRoute(
+                      builder: (context) => const PageControlScreen()),
                 );
               },
               child: const Text('Prince pages'),
               //page control
             ),
-              const SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const DinoSegmentedControlScreen()),
+                  MaterialPageRoute(
+                      builder: (context) => const DinoSegmentedControlScreen()),
                 );
               },
               child: const Text('dino segmented control'),
               //segmented control
             ),
-                const SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const PinoAlertScreen()),
+                  MaterialPageRoute(
+                      builder: (context) => const PinoAlertScreen()),
                 );
               },
               child: const Text('Pino Alert Controllers'),
               //alert controllers
             ),
-                  const SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const BusyBeesScreen()),
+                  MaterialPageRoute(
+                      builder: (context) => const BusyBeesScreen()),
                 );
               },
               child: const Text('Busy Bees Challenge'),
               //Circular Progress Indicators
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const AladdinProgressScreen()),
+                );
+              },
+              child: const Text('Aladdin Progress Screen'),
+              //Linear Progress Indicators
             ),
           ],
         ),
