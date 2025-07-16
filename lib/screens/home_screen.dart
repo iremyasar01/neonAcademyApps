@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:neonacademyapss/screens/container_screen.dart';
 import 'package:neonacademyapss/screens/resque_slider_screen.dart';
+import 'package:neonacademyapss/screens/switch_screen.dart';
 import 'package:neonacademyapss/screens/wicked_queen_screen.dart';
 import 'package:neonacademyapss/screens/wild_west_screen.dart';
 
@@ -49,7 +50,7 @@ class HomeScreen extends StatelessWidget {
               child: const Text('The Wicked Queen'),
               //Textfields
             ),
-                  const SizedBox(height: 20),
+             const SizedBox(height: 20),
              ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -59,6 +60,17 @@ class HomeScreen extends StatelessWidget {
               },
               child: const Text('Resque Mission'),
               //Sliders
+            ),
+            const SizedBox(height: 20),
+             ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SwitchScreen()),
+                );
+              },
+              child: const Text('Switch'),
+              //Switches
             ),
 
           ],
