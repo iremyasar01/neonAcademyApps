@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:neonacademyapss/screens/container_screen.dart';
+import 'package:neonacademyapss/screens/wicked_queen_screen.dart';
 import 'package:neonacademyapss/screens/wild_west_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -23,6 +24,7 @@ class HomeScreen extends StatelessWidget {
                 );
               },
               child: const Text('Awesome Gallery'),
+              //contaniers
             ),
             const SizedBox(height: 20),
              ElevatedButton(
@@ -33,6 +35,18 @@ class HomeScreen extends StatelessWidget {
                 );
               },
               child: const Text('Wild Test'),
+              //buttons
+            ),
+              const SizedBox(height: 20),
+             ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const WickedQueenScreen()),
+                );
+              },
+              child: const Text('The Wicked Queen'),
+              //Textfields
             ),
           ],
         ),
