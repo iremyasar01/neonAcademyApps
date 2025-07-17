@@ -7,10 +7,12 @@ import 'package:neonacademyapss/screens/dress_up_screen.dart';
 import 'package:neonacademyapss/screens/page_control_screen.dart';
 import 'package:neonacademyapss/screens/pino_alert_screen.dart';
 import 'package:neonacademyapss/screens/resque_slider_screen.dart';
+import 'package:neonacademyapss/screens/scroll_view_screen.dart';
 import 'package:neonacademyapss/screens/stack_views_screen.dart';
 import 'package:neonacademyapss/screens/switch_screen.dart';
 import 'package:neonacademyapss/screens/wicked_queen_screen.dart';
 import 'package:neonacademyapss/screens/wild_west_screen.dart';
+
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -21,155 +23,126 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Neon Academy Home'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const ContainerScreen()),
-                );
-              },
-              child: const Text('Awesome Gallery'),
-              //contaniers
+      body: SingleChildScrollView( 
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => const ContainerScreen()));
+                  },
+                  child: const Text('Awesome Gallery'),
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => const WildWestScreen()));
+                  },
+                  child: const Text('Wild Test'),
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => const WickedQueenScreen()));
+                  },
+                  child: const Text('The Wicked Queen'),
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => const RescueSliderScreen()));
+                  },
+                  child: const Text('Resque Mission'),
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => const SwitchScreen()));
+                  },
+                  child: const Text('Switch'),
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => const DressUpScreen()));
+                  },
+                  child: const Text('Dress Up'),
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => const PageControlScreen()));
+                  },
+                  child: const Text('Prince pages'),
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(
+                            builder: (_) => const DinoSegmentedControlScreen()));
+                  },
+                  child: const Text('Dino Segmented Control'),
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => const PinoAlertScreen()));
+                  },
+                  child: const Text('Pino Alert Controllers'),
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => const BusyBeesScreen()));
+                  },
+                  child: const Text('Busy Bees Challenge'),
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => const AladdinProgressScreen()));
+                  },
+                  child: const Text('Aladdin Progress Screen'),
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => const StackViewScreen()));
+                  },
+                  child: const Text('Stack Views'),
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => const ScrollViewScreen()));
+                  },
+                  child: const Text('Scroll Views'),
+                ),
+             
+                const SizedBox(height: 40),
+              ],
             ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const WildWestScreen()),
-                );
-              },
-              child: const Text('Wild Test'),
-              //buttons
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const WickedQueenScreen()),
-                );
-              },
-              child: const Text('The Wicked Queen'),
-              //Textfields
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const RescueSliderScreen()),
-                );
-              },
-              child: const Text('Resque Mission'),
-              //Sliders
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const SwitchScreen()),
-                );
-              },
-              child: const Text('Switch'),
-              //Switches
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const DressUpScreen()),
-                );
-              },
-              child: const Text('Dress Up'),
-              //Stepper
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const PageControlScreen()),
-                );
-              },
-              child: const Text('Prince pages'),
-              //page control
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const DinoSegmentedControlScreen()),
-                );
-              },
-              child: const Text('dino segmented control'),
-              //segmented control
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const PinoAlertScreen()),
-                );
-              },
-              child: const Text('Pino Alert Controllers'),
-              //alert controllers
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const BusyBeesScreen()),
-                );
-              },
-              child: const Text('Busy Bees Challenge'),
-              //Circular Progress Indicators
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const AladdinProgressScreen()),
-                );
-              },
-              child: const Text('Aladdin Progress Screen'),
-              //Linear Progress Indicators
-            ),
-              const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const StackViewScreen()),
-                );
-              },
-              child: const Text('Stack Views'),
-              //Linear Progress Indicators
-            ),
-          ],
+          ),
         ),
       ),
     );
   }
 }
+
