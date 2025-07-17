@@ -1,18 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:neonacademyapss/data/passanger_data.dart';
 import 'package:neonacademyapss/models/passanger_model.dart';
 import 'package:neonacademyapss/widgets/passanger_detail.dart';
 
 class PassengerListScreen extends StatelessWidget {
   PassengerListScreen({super.key});
 
-  final List<PassengerModel> passengers = [
-    PassengerModel(name: 'irem', surname: 'yaşar', team: 'Flutter Team', age: 24, hometown: 'London', mail: 'iremn@flutter.dev'),
-    PassengerModel(name: 'neslişah', surname: 'kurtoglu', team: 'iOS Team', age: 18, hometown: 'New York', mail: 'nesli@ios.com'),
-    PassengerModel(name: 'umut', surname: 'kaya', team: 'Android Team', age: 27, hometown: 'Istanbul', mail: 'umut@android.com'),
-    PassengerModel(name: 'mert', surname: 'göksu', team: 'Design Team', age: 23, hometown: 'Ankara', mail: 'mert@design.com'),
-  ];
+ final List<PassengerModel> passengers = passengerData;
 
-  // Takımları tanımla (görüntüleme sırası için)
   final List<String> teams = [
     'Flutter Team',
     'iOS Team',
@@ -67,7 +62,7 @@ class PassengerListScreen extends StatelessWidget {
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: DataTable(
-                      columnSpacing: 20,
+                      columnSpacing: 50,
                       headingRowColor: WidgetStateColor.resolveWith((states) => Colors.grey.shade200),
                       columns: const [
                         DataColumn(label: Text('Name', style: TextStyle(fontWeight: FontWeight.bold))),

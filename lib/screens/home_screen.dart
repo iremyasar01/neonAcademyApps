@@ -10,6 +10,7 @@ import 'package:neonacademyapss/screens/picker_screen.dart';
 import 'package:neonacademyapss/screens/pino_alert_screen.dart';
 import 'package:neonacademyapss/screens/resque_slider_screen.dart';
 import 'package:neonacademyapss/screens/scroll_view_screen.dart';
+import 'package:neonacademyapss/screens/search_screen.dart';
 import 'package:neonacademyapss/screens/stack_views_screen.dart';
 import 'package:neonacademyapss/screens/switch_screen.dart';
 import 'package:neonacademyapss/screens/tabbar_screen.dart';
@@ -161,6 +162,14 @@ class HomeScreen extends StatelessWidget {
                         MaterialPageRoute(builder: (_) => PassengerListScreen()));
                   },
                   child: const Text('Data Table'),
+                ),
+                    const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => const SearchScreen()));
+                  },
+                  child: const Text('Search'),
                 ),
              
              
