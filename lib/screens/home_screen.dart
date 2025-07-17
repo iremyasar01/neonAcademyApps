@@ -10,6 +10,7 @@ import 'package:neonacademyapss/screens/resque_slider_screen.dart';
 import 'package:neonacademyapss/screens/scroll_view_screen.dart';
 import 'package:neonacademyapss/screens/stack_views_screen.dart';
 import 'package:neonacademyapss/screens/switch_screen.dart';
+import 'package:neonacademyapss/screens/tabbar_screen.dart';
 import 'package:neonacademyapss/screens/wicked_queen_screen.dart';
 import 'package:neonacademyapss/screens/wild_west_screen.dart';
 
@@ -134,6 +135,14 @@ class HomeScreen extends StatelessWidget {
                         MaterialPageRoute(builder: (_) => const ScrollViewScreen()));
                   },
                   child: const Text('Scroll Views'),
+                ),
+                 const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => const TabBarScreen()));
+                  },
+                  child: const Text('Tabbar'),
                 ),
              
                 const SizedBox(height: 40),
