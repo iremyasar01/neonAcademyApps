@@ -133,7 +133,6 @@ class _PinoAlertScreenState extends State<PinoAlertScreen> {
     final box = context.findRenderObject() as RenderBox?;
 
     try {
-      // Görseli assets klasöründen yükleyip geçici dizine yazıyoruz
       final byteData = await rootBundle.load('assets/images/castle.png');
       final tempDir = await getTemporaryDirectory();
       final file = File('${tempDir.path}/castle.png');
