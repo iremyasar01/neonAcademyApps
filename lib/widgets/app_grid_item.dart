@@ -34,20 +34,21 @@ class AppGridItem extends StatelessWidget {
           child: const Text('View Details', style: TextStyle(color: Colors.blue)),
         ),
       ],
-      child: GestureDetector(
-        onTap: () => onTap(context),
-        child: Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(15),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.blue.withOpacity(0.1),
-                blurRadius: 10,
-                offset: const Offset(0, 5),
-              )
-            ],
-          ),
+      child: Container(  // Removed outer GestureDetector
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(15),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.blue.withOpacity(0.1),
+              blurRadius: 10,
+              offset: const Offset(0, 5),
+            )
+          ],
+        ),
+        child: InkWell(  // Added InkWell inside for tap handling
+          onTap: () => onTap(context),
+          borderRadius: BorderRadius.circular(15),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
