@@ -18,23 +18,27 @@ class AppGridItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoContextMenu(
-      actions: [
-        CupertinoContextMenuAction(
-          onPressed: () {
-            Navigator.pop(context);
-            onShare();
-          },
-          child: const Text('Share', style: TextStyle(color: Colors.blue)),
-        ),
-        CupertinoContextMenuAction(
-          onPressed: () {
-            Navigator.pop(context);
-            onTap(context);
-          },
-          child: const Text('View Details', style: TextStyle(color: Colors.blue)),
-        ),
-      ],
-      child: Container(  // Removed outer GestureDetector
+  actions: [
+    CupertinoContextMenuAction(
+      onPressed: () {
+        Navigator.pop(context);
+        onShare();
+      },
+      child: const Text('Share', style: TextStyle(color: Colors.blue)),
+    ),
+    CupertinoContextMenuAction(
+      onPressed: () {
+        Navigator.pop(context);
+        onTap(context);
+      },
+      child: const Text('View Details', style: TextStyle(color: Colors.blue)),
+    ),
+  ],
+  child: SizedBox(
+    height: 200,
+    width: 160, 
+    child: Material(
+      child: Container(
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(15),
@@ -46,7 +50,7 @@ class AppGridItem extends StatelessWidget {
             )
           ],
         ),
-        child: InkWell(  // Added InkWell inside for tap handling
+        child: InkWell(
           onTap: () => onTap(context),
           borderRadius: BorderRadius.circular(15),
           child: Column(
@@ -54,14 +58,17 @@ class AppGridItem extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: const BorderRadius.vertical(top: Radius.circular(15)),
-                child: CachedNetworkImage(
-                  imageUrl: app.artworkUrl100,
-                  fit: BoxFit.cover,
-                  placeholder: (context, url) => Container(
-                    color: Colors.blue[50],
-                    child: const Center(child: CircularProgressIndicator()),
+                child: SizedBox(
+                  height: 120, 
+                  child: CachedNetworkImage(
+                    imageUrl: app.artworkUrl100,
+                    fit: BoxFit.cover,
+                    placeholder: (context, url) => Container(
+                      color: Colors.blue[50],
+                      child: const Center(child: CircularProgressIndicator()),
+                    ),
+                    errorWidget: (context, url, error) => const Icon(Icons.error),
                   ),
-                  errorWidget: (context, url, error) => const Icon(Icons.error),
                 ),
               ),
               Padding(
@@ -84,6 +91,8 @@ class AppGridItem extends StatelessWidget {
           ),
         ),
       ),
-    );
+    ),
+  ),
+);
   }
-}
+  }
