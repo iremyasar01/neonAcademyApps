@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:share_plus/share_plus.dart';
@@ -15,7 +14,8 @@ class GridAppScreen extends StatefulWidget {
 }
 
 class GridAppScreenState extends State<GridAppScreen> {
-  final RefreshController _refreshController = RefreshController(initialRefresh: false);
+  final RefreshController _refreshController =
+      RefreshController(initialRefresh: false);
   final ApiService _apiService = ApiService();
   List<AppModel> apps = [];
   bool _isLoading = true;
@@ -28,7 +28,7 @@ class GridAppScreenState extends State<GridAppScreen> {
 
   Future<void> _fetchApps() async {
     setState(() => _isLoading = true);
-    
+
     try {
       final fetchedApps = await _apiService.fetchNeonApps();
       setState(() {
@@ -39,20 +39,20 @@ class GridAppScreenState extends State<GridAppScreen> {
       debugPrint('Error fetching apps: $e');
       setState(() => _isLoading = false);
     }
-    
+
     _refreshController.refreshCompleted();
   }
 
   void _onRefresh() => _fetchApps();
 
-void _shareApp(AppModel app) {
-  SharePlus.instance.share(
-    ShareParams(
-     text:  'Check out ${app.appName} by Neon Apps! ${app.storeURL}',
-      subject: 'Neon Apps - ${app.appName}',
-    ),
-  );
-}
+  void _shareApp(AppModel app) {
+    SharePlus.instance.share(
+      ShareParams(
+        text: 'Check out ${app.appName} by Neon Apps! ${app.storeURL}',
+        subject: 'Neon Apps - ${app.appName}',
+      ),
+    );
+  }
 
   void _navigateToDetail(BuildContext context, AppModel app) {
     Navigator.push(

@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -39,7 +37,8 @@ class AppDetailScreen extends StatelessWidget {
             const SizedBox(height: 20),
             Text(app.appName, style: Theme.of(context).textTheme.headlineSmall),
             const SizedBox(height: 10),
-            Text('by ${app.artistName}', style: const TextStyle(color: Colors.grey)),
+            Text('by ${app.artistName}',
+                style: const TextStyle(color: Colors.grey)),
             const SizedBox(height: 20),
             _buildDetailRow('Release Date', app.releaseDate.substring(0, 10)),
             _buildDetailRow('Category', app.appCategory),
@@ -51,7 +50,8 @@ class AppDetailScreen extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
                 foregroundColor: Colors.white,
-                padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
               ),
             ),
             const SizedBox(height: 30),
@@ -85,13 +85,9 @@ class AppDetailScreen extends StatelessWidget {
     try {
       final uri = Uri.parse(url);
       launchUrl(uri, mode: LaunchMode.externalApplication);
-     
     } catch (e) {
       debugPrint('URL launch error: $e');
       _showError(context, 'Bağlantı açılamadı: ${e.toString()}');
     }
   }
-
 }
-
-

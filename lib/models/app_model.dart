@@ -26,5 +26,6 @@ class AppModel {
     );
   }
 
-  String get highResArtwork => artworkUrl100.replaceAll('100x100bb', '500x500bb');
+  String get highResArtwork =>
+      artworkUrl100.replaceAll('100x100bb', '500x500bb');
 }
