@@ -5,6 +5,7 @@ import 'package:neonacademyapss/screens/container_screen.dart';
 import 'package:neonacademyapss/screens/dino_segmented_control_screen.dart';
 import 'package:neonacademyapss/screens/dress_up_screen.dart';
 import 'package:neonacademyapss/screens/grid_app_screen.dart';
+import 'package:neonacademyapss/screens/news_screen.dart';
 import 'package:neonacademyapss/screens/page_control_screen.dart';
 import 'package:neonacademyapss/screens/passanger_list_screen.dart';
 import 'package:neonacademyapss/screens/picker_screen.dart';
@@ -179,6 +180,14 @@ class HomeScreen extends StatelessWidget {
                         MaterialPageRoute(builder: (_) => const GridAppScreen()));
                   },
                   child: const Text('Grid View'),
+                ),
+                        const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) =>  NewsScreen()));
+                  },
+                  child: const Text('List View'),
                 ),
              
              
