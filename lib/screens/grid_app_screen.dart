@@ -5,6 +5,7 @@ import '../services/api_service.dart';
 import '../models/app_model.dart';
 import '../widgets/app_grid_item.dart';
 import 'app_detail_screen.dart';
+import '../widgets/size_setting_widget.dart'; // BURAYI EKLE
 
 class GridAppScreen extends StatefulWidget {
   const GridAppScreen({super.key});
@@ -19,6 +20,7 @@ class GridAppScreenState extends State<GridAppScreen> {
   final ApiService _apiService = ApiService();
   List<AppModel> apps = [];
   bool _isLoading = true;
+  double _aspectRatio = 0.7; // KULLANICI AYARI BURADA
 
   @override
   void initState() {
@@ -28,7 +30,6 @@ class GridAppScreenState extends State<GridAppScreen> {
 
   Future<void> _fetchApps() async {
     setState(() => _isLoading = true);
-
     try {
       final fetchedApps = await _apiService.fetchNeonApps();
       setState(() {
@@ -39,7 +40,6 @@ class GridAppScreenState extends State<GridAppScreen> {
       debugPrint('Error fetching apps: $e');
       setState(() => _isLoading = false);
     }
-
     _refreshController.refreshCompleted();
   }
 
@@ -63,11 +63,36 @@ class GridAppScreenState extends State<GridAppScreen> {
     );
   }
 
+  void _showAspectRatioSettings() {
+    showModalBottomSheet(
+      context: context,
+      builder: (_) {
+        return Padding(
+          padding: const EdgeInsets.all(16),
+          child: SizeSettingWidget(
+            initialRatio: _aspectRatio,
+            onAspectRatioChanged: (newRatio) {
+              setState(() {
+                _aspectRatio = newRatio;
+              });
+            },
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Mermaid\'s Tail Quest'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.settings),
+            onPressed: _showAspectRatioSettings,
+          ),
+        ],
       ),
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
@@ -76,9 +101,9 @@ class GridAppScreenState extends State<GridAppScreen> {
               onRefresh: _onRefresh,
               header: const ClassicHeader(),
               child: GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  childAspectRatio: 0.7,
+                  childAspectRatio: _aspectRatio, // <-- Dinamik hale getirildi
                   mainAxisSpacing: 10,
                   crossAxisSpacing: 10,
                 ),
@@ -94,3 +119,4 @@ class GridAppScreenState extends State<GridAppScreen> {
     );
   }
 }
+
