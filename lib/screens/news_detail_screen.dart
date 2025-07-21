@@ -21,7 +21,7 @@ class NewsDetailScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            /// Görsel
+    
             if (article.imageUrl.isNotEmpty)
               ClipRRect(
                 borderRadius: BorderRadius.circular(12),
@@ -35,8 +35,6 @@ class NewsDetailScreen extends StatelessWidget {
               ),
 
             const SizedBox(height: 20),
-
-            /// Başlık
             Text(
               article.title,
               style: const TextStyle(
@@ -47,7 +45,6 @@ class NewsDetailScreen extends StatelessWidget {
 
             const SizedBox(height: 12),
 
-            /// Açıklama
             if (article.description.isNotEmpty)
               Text(
                 article.description,
@@ -55,8 +52,6 @@ class NewsDetailScreen extends StatelessWidget {
               ),
 
             const SizedBox(height: 16),
-
-            /// İçerik
             if (article.content.isNotEmpty)
               Text(
                 _cleanContent(article.content),

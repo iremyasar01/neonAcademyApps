@@ -22,14 +22,14 @@ class NewsScreen extends StatelessWidget {
               child: Padding(
                 padding:  EdgeInsets.all(16),
                 child: Text(
-                  'Haberler yüklenemedi.\nLütfen internet bağlantınızı kontrol edin.',
+                  'Failed to load news. Please try again later.',
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 16, color: Colors.red),
                 ),
               ),
             );
           } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-            return const Center(child: Text('Hiç haber bulunamadı.'));
+            return const Center(child: Text('No news available.'));
           }
 
           final articles = snapshot.data!;
@@ -93,7 +93,7 @@ class NewsScreen extends StatelessWidget {
                               Text(
                                 article.description.isNotEmpty
                                     ? article.description
-                                    : 'Açıklama bulunamadı.',
+                                    : 'No description available',
                                 maxLines: 3,
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(fontSize: 14),
